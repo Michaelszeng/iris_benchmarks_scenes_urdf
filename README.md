@@ -1,5 +1,7 @@
 # URDF and YAML Files for Benchmark Scenes as Seen in [Werner et. al.](https://groups.csail.mit.edu/robotics-center/public_papers/Werner24.pdf)
 
+![Alt text](image.png)
+
 Asset files not included.
 
 ### Work in Progress...
