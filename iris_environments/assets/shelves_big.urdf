@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<robot name="shelves">
+  <link name="bottom">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 0.6 0.016"/>
+      </geometry>
+      <material name="bottom_material">
+        <color rgba="0.5 0.9 0.5 1"/>
+      </material>
+    </visual>
+    <collision name="bottom">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 0.6 0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="top">
+    <visual>
+      <origin xyz="0.0 0.0 1.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 0.6 0.016"/>
+      </geometry>
+      <material name="top_material">
+        <color rgba="0.5 0.9 0.5 1"/>
+      </material>
+    </visual>
+    <collision name="top">
+      <origin xyz="0.0 0.0 1.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 0.6 0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right">
+    <visual>
+      <origin xyz="0.0 0.3 0.5" rpy="1.57 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 1 0.016"/>
+      </geometry>
+      <material name="right_material">
+        <color rgba="0.5 0.9 0.5 1"/>
+      </material>
+    </visual>
+    <collision name="right">
+      <origin xyz="0.0 0.3 0.5" rpy="1.57 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 1 0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left">
+    <visual>
+      <origin xyz="0.0 -0.3 0.5" rpy="1.57 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 1 0.016"/>
+      </geometry>
+      <material name="left_material">
+        <color rgba="0.5 0.9 0.5 1"/>
+      </material>
+    </visual>
+    <collision name="left">
+      <origin xyz="0.0 -0.3 0.5" rpy="1.57 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 1 0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="shelf1">
+    <visual>
+      <origin xyz="0.0 0.0 0.5" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 0.6 0.016"/>
+      </geometry>
+      <material name="shelf1_material">
+        <color rgba="0.5 0.9 0.5 1"/>
+      </material>
+    </visual>
+    <collision name="shelf1">
+      <origin xyz="0.0 0.0 0.45" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 0.6 0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="shelf2">
+    <visual>
+      <origin xyz="0.0 0.0 0.78" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 0.6 0.016"/>
+      </geometry>
+      <material name="shelf2_material">
+        <color rgba="0.5 0.9 0.5 1"/>
+      </material>
+    </visual>
+    <collision name="shelf2">
+      <origin xyz="0.0 0.0 0.78" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.3 0.6 0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="top_bottom_joint" type="fixed">
+    <parent link="bottom"/>
+    <child link="top"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="right_bottom_joint" type="fixed">
+    <parent link="bottom"/>
+    <child link="right"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="left_bottom_joint" type="fixed">
+    <parent link="bottom"/>
+    <child link="left"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="shelf1_bottom_joint" type="fixed">
+    <parent link="bottom"/>
+    <child link="shelf1"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="shelf2_bottom_joint" type="fixed">
+    <parent link="bottom"/>
+    <child link="shelf2"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+</robot>
