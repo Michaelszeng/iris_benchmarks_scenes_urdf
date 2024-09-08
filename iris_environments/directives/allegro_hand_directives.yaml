@@ -1,0 +1,72 @@
+# Model directive for planar iiwa with simple collision and welded gripper
+
+directives:
+
+# Add iiwa
+- add_model:
+    name: allegro_hand
+    file: package://iris_environments/models/allegro_hand_description/sdf/allegro_hand_description_left.sdf
+
+- add_weld:
+    parent: world
+    child: allegro_hand::hand_root
+
+# Add shelves
+- add_model:
+    name: block
+    file: package://iris_environments/block.sdf
+
+- add_frame:
+    name: block_origin
+    X_PF:
+      base_frame: world
+      translation: [0.1, 0, 0.09]
+
+- add_weld:
+    parent: block_origin
+    child: block::block_body
+
+# # Add shelves
+# - add_model:
+#     name: shelves4
+#     file: file:///home/peter/git/cvisiris_examples/assets/shelves1.sdf
+
+# - add_frame:
+#     name: shelf4_origin
+#     X_PF:
+#       base_frame: world
+#       translation: [-0.48, 0.5599999999999999, 0.4]
+
+# - add_weld:
+#     parent: shelf4_origin
+#     child: shelves4::shelves_body
+
+# # Add lid
+# - add_model:
+#     name: lid
+#     file: file:///home/peter/git/cvisiris_examples/assets/lid.urdf
+
+# - add_frame:
+#     name: lid_origin
+#     X_PF:
+#       base_frame: world
+#       translation: [0.0 ,0 , 0.95]
+
+# - add_weld:
+#     parent: lid_origin
+#     child: lid::base
+
+# # Add ground
+# - add_model:
+#     name: ground
+#     file: package://iris_environments/ground_big.urdf
+
+# - add_frame:
+#     name: ground_origin
+#     X_PF:
+#       base_frame: world
+#       translation: [0.0 ,0 , -0.05]
+
+# - add_weld:
+#     parent: ground_origin
+#     child: ground::base

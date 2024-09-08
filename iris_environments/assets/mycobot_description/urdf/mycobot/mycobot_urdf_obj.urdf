@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<robot  xmlns:xacro="http://www.ros.org/wiki/xacro" name="firefighter" >
+	
+<xacro:property name="width" value=".2" />
+
+
+  <link name="g_base">
+    <visual name="g_base_visual">
+      <geometry>
+        <mesh filename="package://mycobot_description/urdf/mycobot/G_base.obj"/>
+      </geometry>
+      <origin xyz = "0.0 0 -0.018" rpy = "1.5708 0 0"/>
+    </visual>
+    <collision name="g_base_collision">
+      <geometry>
+	    <box size="0.152000 0.034000 0.111987"/> 
+      </geometry>
+	<origin xyz = "0.0 0.0 -0.017993735924363135" rpy = "1.5708 0 0"/>
+    </collision>
+  </link>
+
+  <link name="joint1">
+    <visual name="joint1_visual">
+      <geometry>
+       <mesh filename="package://mycobot_description/urdf/mycobot/joint1.obj"/>
+      </geometry>
+      <origin xyz = "0.0 0 0 " rpy = " 0 0 -1.5708"/>
+    </visual>
+    <collision name="joint1_collision">
+      <geometry>
+	    <box size="0.092000 0.098794 0.075000"/> 
+        </geometry>
+	<origin xyz = "-0.003603000196375702 -6.852573722575459e-07 0.0364999994635582" rpy = " 0 0 -1.5708"/>
+    </collision>
+  </link>
+
+  <link name="joint2">
+    <visual name="joint2_visual">
+      <geometry>
+       <mesh filename="package://mycobot_description/urdf/mycobot/joint2.obj"/>
+      </geometry>
+      <origin xyz = "0.0 0 -0.06096 " rpy = " 0 0 -1.5708"/>
+    </visual>
+    <collision name="joint2_collision">
+     <geometry>
+	    <box size="0.062540 0.050000 0.089060"/> 
+      </geometry>
+	<origin xyz = "-2.316249949871487e-08 -0.0063058007508090905 -0.02061169940609485" rpy = " 0 0 -1.5708"/>
+    </collision>
+  </link>
+
+
+  <link name="joint3">
+    <visual name="joint3_visual">
+      <geometry>
+       <mesh filename="package://mycobot_description/urdf/mycobot/joint3.obj"/>
+      </geometry>
+    <origin xyz = "0.0 0 0.03256 " rpy = " 0 -1.5708 0"/>
+    </visual>
+    <collision name="joint3_collision">
+      <geometry>
+	    <box size="0.057440 0.050000 0.158000"/> 
+      </geometry>
+	<origin xyz = "-0.05400009135297152 0.0 0.05755575728534496" rpy = " 0 -1.5708 0"/>
+    </collision>
+  </link>
+
+
+  <link name="joint4">
+    <visual name="joint4_visual">
+      <geometry>
+       <mesh filename="package://mycobot_description/urdf/mycobot/joint4.obj"/>
+      </geometry>
+      <origin xyz = "0.0 0 0.03056 " rpy = " 0 -1.5708 0"/>
+    </visual>
+    <collision name="joint4_collision">
+      <geometry>
+	    <box size="0.059800 0.045200 0.138800"/> 
+      </geometry>
+	<origin xyz = "-0.04675991282741587 0.0 0.00649580915152255" rpy = " 0 -1.5708 0"/>
+    </collision>
+  </link>
+
+
+  <link name="joint5">
+    <visual name="joint5_visual">
+      <geometry>
+       <mesh filename="package://mycobot_description/urdf/mycobot/joint5.obj"/>
+      </geometry>
+    <origin xyz = "0.0 0 -0.03356 " rpy = " -1.5708 0 0"/>
+    </visual>
+    <collision name="joint5_collision">
+       <geometry>
+	    <box size="0.040586 0.054786 0.058343"/> 
+      </geometry>
+	<origin xyz = "5.047768354415894e-07 -0.008464809015650809 -0.007311053822263748" rpy = " -1.5708 0 0"/>
+    </collision>
+  </link>
+
+
+  <link name="joint6">
+    <visual name="joint6_visual">
+      <geometry>
+       <mesh filename="package://mycobot_description/urdf/mycobot/joint6.obj"/>
+      </geometry>
+    <origin xyz = "0 0.00 -0.038 " rpy = " 0 0 0"/>
+    </visual>
+    <collision name="joint6_collision">
+      <geometry>
+	    <box size="0.040400 0.058700 0.059120"/> 
+      </geometry>
+	<origin xyz = "0.0 0.006750000640749931 -0.00944000045955181" rpy = " 0 0 0"/>
+    </collision>
+  </link>
+
+
+  <link name="joint6_flange">
+    <visual name="joint6_flange_visual">
+      <geometry>
+       <mesh filename="package://mycobot_description/urdf/mycobot/joint7.obj"/>
+      </geometry>
+    <origin xyz = "0.0 0 -0.012 " rpy = " 0 0 0"/>
+    </visual>
+    <collision name="joint6_flange_collision">
+      <geometry>
+	    <box size="0.040400 0.040400 0.015700"/> 
+      </geometry>
+	<origin xyz = "0.0 0.0 -0.005149999994784594" rpy = " 0 0 0"/>
+    </collision>
+  </link>
+
+
+  <joint name="g_base_to_joint1" type="fixed">
+    <axis xyz="0 0 0"/>
+    <limit effort = "1000.0" lower = "-3.14" upper = "3.14159" velocity = "0"/>
+    <parent link="g_base"/>
+    <child link="joint1"/>
+    <origin xyz= "0 0 0" rpy = "0 0 0"/>  
+  </joint>
+
+
+  <joint name="joint2_to_joint1" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort = "1000.0" lower = "-3.14" upper = "3.14159" velocity = "0"/>
+    <parent link="joint1"/>
+    <child link="joint2"/>
+    <origin xyz= "0 0 0.13156" rpy = "0 0 0"/>  
+  </joint>
+
+
+  <joint name="joint3_to_joint2" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort = "1000.0" lower = "-3.14" upper = "3.14159" velocity = "0"/>
+    <parent link="joint2"/>
+    <child link="joint3"/>
+    <origin xyz= "0 0  0" rpy = "0 1.5708 -1.5708"/>  
+  </joint>
+
+
+  <joint name="joint4_to_joint3" type="revolute">
+    <axis xyz=" 0 0 1"/>
+    <limit effort = "1000.0" lower = "-3.14" upper = "3.14159" velocity = "0"/>
+    <parent link="joint3"/>
+    <child link="joint4"/>
+    <origin xyz= "  -0.1104 0 0   " rpy = "0 0 0"/>  
+  </joint>
+
+
+
+  <joint name="joint5_to_joint4" type="revolute">
+    <axis xyz=" 0 0 1"/>
+    <limit effort = "1000.0" lower = "-3.14" upper = "3.14159" velocity = "0"/>
+    <parent link="joint4"/>
+    <child link="joint5"/>
+    <origin xyz= "-0.096 0 0.06462" rpy = "0 0 -1.5708"/>  
+  </joint>
+
+  <joint name="joint6_to_joint5" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort = "1000.0" lower = "-3.14" upper = "3.14159" velocity = "0"/>
+    <parent link="joint5"/>
+    <child link="joint6"/>
+    <origin xyz= "0 -0.07318 0" rpy = "1.5708 -1.5708 0"/>  
+  </joint>
+
+  <joint name="joint6output_to_joint6" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort = "1000.0" lower = "-3.14" upper = "3.14159" velocity = "0"/>
+    <parent link="joint6"/>
+    <child link="joint6_flange"/>
+    <origin xyz= "0 0.0456 0" rpy = "-1.5708 0 0"/>  
+  </joint>
+
+
+
+</robot>

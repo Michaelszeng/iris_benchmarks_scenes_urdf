@@ -1,0 +1,220 @@
+<?xml version="1.0" ?>
+<robot name="iiwa7_oneDOF">
+  <link name="iiwa_oneDOF_link_0">
+    <inertial>
+      <mass value="3.863"/>
+      <inertia ixx="0.0141" ixy="0" ixz="0" iyy="0.0171" iyz="0" izz="0.0178"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://iris_environments/models/iiwa_description/iiwa7/link_0.obj"/>
+      </geometry>
+      <material name="iiwa_oneDOF_link_0_material">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <collision name="iiwa_oneDOF_link_0_collision">
+      <origin xyz="-0.004563 0.0 0.07875" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.216874 0.207874 0.1575"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="iiwa_oneDOF_link_1">
+    <inertial>
+      <mass value="2.7025"/>
+      <inertia ixx="0.0171" ixy="0" ixz="0" iyy="0.0163" iyz="0" izz="0.006"/>
+      <origin xyz="0.0 0.0 0.1575" rpy="0.0 0.0 0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://iris_environments/models/iiwa_description/iiwa7/link_1.obj"/>
+      </geometry>
+      <material name="iiwa_oneDOF_link_1_material">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <collision name="iiwa_oneDOF_link_1_collision">
+      <origin xyz="0.0 -0.023301 0.127997" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.13596 0.182584 0.260995"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="iiwa_oneDOF_link_2">
+    <inertial>
+      <mass value="2.7258"/>
+      <inertia ixx="0.0170" ixy="0" ixz="0" iyy="0.0162" iyz="0" izz="0.0061"/>
+      <origin xyz="0.0 0.0 0.3405" rpy="1.5708 0.0 -3.14159"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://iris_environments/models/iiwa_description/iiwa7/link_2.obj"/>
+      </geometry>
+      <material name="iiwa_oneDOF_link_2_material">
+        <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+      </material>
+    </visual>
+    <collision name="iiwa_oneDOF_link_2_collision">
+      <origin xyz="0.0 0.0580045 0.0173035" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.135988 0.251991 0.182605"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="iiwa_oneDOF_link_3">
+    <inertial>
+      <mass value="3.175"/>
+      <inertia ixx="0.025" ixy="0" ixz="0" iyy="0.0238" iyz="0" izz="0.0076"/>
+      <origin xyz="0.0 0.0 0.5245" rpy="0.0 0.0 0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://iris_environments/models/iiwa_description/iiwa7/link_3.obj"/>
+      </geometry>
+      <material name="iiwa_oneDOF_link_3_material">
+        <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+      </material>
+    </visual>
+    <collision name="iiwa_oneDOF_link_3_collision">
+      <origin xyz="0.0 0.0182965 0.11073" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.135987 0.182593 0.29346"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="iiwa_oneDOF_link_4">
+    <inertial>
+      <mass value="2.73"/>
+      <inertia ixx="0.017" ixy="0" ixz="0" iyy="0.0162" iyz="0" izz="0.0061"/>
+      <origin xyz="0.0 0.0 0.74" rpy="1.5708 0.0 0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://iris_environments/models/iiwa_description/iiwa7/link_4.obj"/>
+      </geometry>
+      <material name="iiwa_oneDOF_link_4_material">
+        <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+      </material>
+    </visual>
+    <collision name="iiwa_oneDOF_link_4_collision">
+      <origin xyz="0.0 0.0580045 0.0233035" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.135988 0.251991 0.182605"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="iiwa_oneDOF_link_5">
+    <inertial>
+      <mass value="1.69"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.0087" iyz="0" izz="0.00449"/>
+      <origin xyz="0.0 0.0 0.924" rpy="0.0 0.0 -3.14159"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://iris_environments/models/iiwa_description/iiwa7/link_5.obj"/>
+      </geometry>
+      <material name="iiwa_oneDOF_link_5_material">
+        <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+      </material>
+    </visual>
+    <collision name="iiwa_oneDOF_link_5_collision">
+      <origin xyz="0.0 0.015546 0.102458" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.135999 0.167092 0.276916"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="iiwa_oneDOF_link_6">
+    <inertial>
+      <mass value="1.8"/>
+      <inertia ixx="0.0051" ixy="0" ixz="0" iyy="0.0049" iyz="0" izz="0.0035"/>
+      <origin xyz="0.0 0.0 1.1395" rpy="1.5708 0.0 -3.14159"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 -0.0607" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://iris_environments/models/iiwa_description/iiwa7/link_6.obj"/>
+      </geometry>
+      <material name="iiwa_oneDOF_link_6_material">
+        <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+      </material>
+    </visual>
+    <collision name="iiwa_oneDOF_link_6_collision">
+      <geometry>
+        <box size="0.132334 0.177387 0.137409"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="iiwa_oneDOF_link_7">
+    <inertial>
+      <mass value=".4"/>
+      <inertia ixx="0.0004" ixy="0" ixz="0" iyy="0.0004" iyz="0" izz="0.0005"/>
+      <origin xyz="0.0 0.0 1.22" rpy="0.0 0.0 0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://iris_environments/models/iiwa_description/iiwa7/link_7.obj"/>
+      </geometry>
+      <material name="iiwa_oneDOF_link_7_material">
+        <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+      </material>
+    </visual>
+    <collision name="iiwa_oneDOF_link_7_collision">
+      <origin xyz="0.0 0.0 0.021997" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10385 0.103885 0.045"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="iiwa_joint_1" type="fixed">
+    <parent link="iiwa_oneDOF_link_0"/>
+    <child link="iiwa_oneDOF_link_1"/>
+    <origin xyz="0.0 0.0 0.1575" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-2.96706" upper="2.96706" effort="300" velocity="10"/>
+  </joint>
+  <joint name="iiwa_joint_2" type="revolute">
+    <parent link="iiwa_oneDOF_link_1"/>
+    <child link="iiwa_oneDOF_link_2"/>
+    <origin xyz="0.0 0.0 0.18300000000000002" rpy="1.5708 -0.0 -3.14159"/>
+    <axis xyz="-2.6535897933527295e-06 3.6732051033336414e-06 0.999999999989733"/>
+    <limit lower="-2.0944" upper="2.0944" effort="300" velocity="10"/>
+  </joint>
+  <joint name="iiwa_joint_3" type="fixed">
+    <parent link="iiwa_oneDOF_link_2"/>
+    <child link="iiwa_oneDOF_link_3"/>
+    <origin xyz="-3.95818847805088e-29 0.1839999999987586 -6.758697390157694e-07" rpy="1.5708 2.6535897933379425e-06 -3.1415926535800462"/>
+    <axis xyz="2.653589793325485e-06 7.0415258596773114e-12 0.9999999999964793"/>
+    <limit lower="-2.96706" upper="2.96706" effort="300" velocity="10"/>
+  </joint>
+  <joint name="iiwa_joint_4" type="fixed">
+    <parent link="iiwa_oneDOF_link_3"/>
+    <child link="iiwa_oneDOF_link_4"/>
+    <origin xyz="0.0 0.0 0.21550000000000002" rpy="1.5708 -0.0 0.0"/>
+    <axis xyz="0.0 3.6732051033465744e-06 0.9999999999932538"/>
+    <limit lower="-2.0944" upper="2.0944" effort="300" velocity="10"/>
+  </joint>
+  <joint name="iiwa_joint_5" type="fixed">
+    <parent link="iiwa_oneDOF_link_4"/>
+    <child link="iiwa_oneDOF_link_5"/>
+    <origin xyz="0.0 0.18399999999875882 -6.758697390157703e-07" rpy="1.5708 -2.6535897933379425e-06 3.1415926535800462"/>
+    <axis xyz="2.6535897933348283e-06 1.293249903867866e-17 0.9999999999964793"/>
+    <limit lower="-2.96706" upper="2.96706" effort="300" velocity="10"/>
+  </joint>
+  <joint name="iiwa_joint_6" type="fixed">
+    <parent link="iiwa_oneDOF_link_5"/>
+    <child link="iiwa_oneDOF_link_6"/>
+    <origin xyz="0.0 0.0 0.2154999999999999" rpy="1.5708 -0.0 0.0"/>
+    <axis xyz="-9.747179570708112e-12 3.673205103333642e-06 -0.9999999999932538"/>
+    <limit lower="-2.0944" upper="2.0944" effort="300" velocity="10"/>
+  </joint>
+  <joint name="iiwa_joint_7" type="fixed">
+    <parent link="iiwa_oneDOF_link_6"/>
+    <child link="iiwa_oneDOF_link_7"/>
+    <origin xyz="-3.554291694576303e-28 0.0804999999994569 -2.9569301081939874e-07" rpy="1.5708 2.6535897933379425e-06 -3.1415926535800462"/>
+    <axis xyz="2.653589793325485e-06 7.0415258596773114e-12 0.9999999999964793"/>
+    <limit lower="-3.05433" upper="3.05433" effort="300" velocity="10"/>
+  </joint>
+</robot>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<robot name="roi_box">
+  
+  <material name="li">
+    <color rgba="0.0 1.0 0.0 0.5"/>
+  </material>
+
+  <link name="base"/>
+
+  <link name="roi_box">
+    <!-- <collision>
+       <origin xyz="0 0 .0" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.2 0.1 1.8"/>
+      </geometry>
+    </collision> -->
+    <visual>
+      <origin xyz="0 0 .0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.3 0.19 0.7"/>
+      </geometry>
+      <material name="li"/>
+    </visual>
+  </link>
+
+  <joint name="jroi_box" type="fixed">
+    <origin rpy="-0.77 0 0" xyz="0 0.0 0.8"/>
+    <parent link="base"/>
+    <child link="roi_box"/>
+  </joint>
+</robot>
