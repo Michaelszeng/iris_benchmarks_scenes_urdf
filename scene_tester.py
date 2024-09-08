@@ -29,7 +29,6 @@ parser = builder.parser()
 parser.SetAutoRenaming(True)
 
 parser.package_map().Add("iris_environments", os.path.dirname(os.path.abspath(__file__)) +"/iris_environments/assets")
-# parser.AddModels(yaml_file)
 directives = LoadModelDirectives(yaml_file)
 ProcessModelDirectives(directives, plant, parser)
 
@@ -46,4 +45,7 @@ plant_context = plant.GetMyMutableContextFromRoot(diagram_context)
 diagram.ForcedPublish(diagram_context)
 
 simulator = Simulator(diagram)
-simulator.AdvanceTo(0.001)
+simulator.set_publish_every_time_step(True)
+meshcat.StartRecording()
+simulator.AdvanceTo(10)
+meshcat.PublishRecording()
