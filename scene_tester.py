@@ -19,7 +19,7 @@ import numpy as np
 import os
 import yaml
 
-TEST_FILE = "7DOFIIWA.dmd.yaml"
+TEST_FILE = "7DOF4SHELVES.dmd.yaml"
 
 yaml_file = os.path.dirname(os.path.abspath(__file__)) + "/yamls/" + TEST_FILE
 

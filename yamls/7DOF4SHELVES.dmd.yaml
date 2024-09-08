@@ -1,0 +1,116 @@
+directives:
+
+# Add iiwa
+- add_model:
+    name: iiwa
+    file: package://iris_environments/iiwa7_with_box_collision.urdf
+
+- add_weld:
+    parent: world
+    child: iiwa::iiwa_link_0
+
+# Add schunk
+- add_model:
+    name: wsg
+    file: package://iris_environments/schunk_wsg_50_welded_fingers.urdf
+
+- add_frame:
+    name: iiwa::wsg_attach
+    X_PF:
+      base_frame: iiwa::iiwa_link_7
+      translation: [0, 0, 0.114]
+      rotation: !Rpy { deg: [90.0, 0.0, 0.0 ]}
+
+- add_weld:
+    parent: iiwa::wsg_attach
+    child: wsg::body
+
+# Add shelves
+- add_model:
+    name: shelves1
+    file: package://iris_environments/shelves1.urdf
+
+- add_frame:
+    name: shelf1_origin
+    X_PF:
+      base_frame: world
+      translation: [0.48, -0.5599999999999999, 0.4]
+
+- add_weld:
+    parent: shelf1_origin
+    child: shelves1::shelves_body
+
+# Add shelves
+- add_model:
+    name: shelves2
+    file: package://iris_environments/shelves1.urdf
+
+- add_frame:
+    name: shelf2_origin
+    X_PF:
+      base_frame: world
+      translation: [0.48, 0.5599999999999999, 0.4]
+
+- add_weld:
+    parent: shelf2_origin
+    child: shelves2::shelves_body
+
+# Add shelves
+- add_model:
+    name: shelves3
+    file: package://iris_environments/shelves1.urdf
+
+- add_frame:
+    name: shelf3_origin
+    X_PF:
+      base_frame: world
+      translation: [-0.48, -0.5599999999999999, 0.4]
+
+- add_weld:
+    parent: shelf3_origin
+    child: shelves3::shelves_body
+
+# Add shelves
+- add_model:
+    name: shelves4
+    file: package://iris_environments/shelves1.urdf
+
+- add_frame:
+    name: shelf4_origin
+    X_PF:
+      base_frame: world
+      translation: [-0.48, 0.5599999999999999, 0.4]
+
+- add_weld:
+    parent: shelf4_origin
+    child: shelves4::shelves_body
+
+# Add lid
+- add_model:
+    name: lid
+    file: package://iris_environments/lid.urdf
+
+- add_frame:
+    name: lid_origin
+    X_PF:
+      base_frame: world
+      translation: [0.0 ,0 , 0.95]
+
+- add_weld:
+    parent: lid_origin
+    child: lid::base
+
+# Add ground
+- add_model:
+    name: ground
+    file: package://iris_environments/ground_big.urdf
+
+- add_frame:
+    name: ground_origin
+    X_PF:
+      base_frame: world
+      translation: [0.0 ,0 , -0.05]
+
+- add_weld:
+    parent: ground_origin
+    child: ground::base

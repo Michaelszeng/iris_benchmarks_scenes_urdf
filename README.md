@@ -11,7 +11,7 @@ Run `python scene_tester.py` to visualize a scene in Meshcat.
 &nbsp;&nbsp;&nbsp;✅ 5DOFUR3<br>
 &nbsp;&nbsp;&nbsp;✅ 6DOFUR3<br>
 &nbsp;&nbsp;&nbsp;✅ 7DOFIIWA<br>
-&nbsp;&nbsp;&nbsp;🚧 7DOF4SHELVES<br>
+&nbsp;&nbsp;&nbsp;✅ 7DOF4SHELVES<br>
 &nbsp;&nbsp;&nbsp;🚧 7DOFBINS<br>
 &nbsp;&nbsp;&nbsp;🚧 14DOFIIWAS<br>
 &nbsp;&nbsp;&nbsp;🚧 15DOFALLEGRO<br>
