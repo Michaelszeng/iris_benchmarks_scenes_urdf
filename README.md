@@ -2,19 +2,12 @@
 
 Asset files not included.
 
-#### Work in Progress...
-  ✅ 3DOFFLIPPER
-  
-  ✅ 5DOFUR3
-  
-  🚧 6DOFUR3
-  
-  🚧 7DOFIIWA
-  
-  🚧 7DOF4SHELVES
-  
-  🚧 7DOFBINS
-  
-  🚧 14DOFIIWAS
-  
-  🚧 15DOFALLEGRO
+### Work in Progress...
+&nbsp;&nbsp;&nbsp;✅ 3DOFFLIPPER<br>
+&nbsp;&nbsp;&nbsp;✅ 5DOFUR3<br>
+&nbsp;&nbsp;&nbsp;🚧 6DOFUR3<br>
+&nbsp;&nbsp;&nbsp;🚧 7DOFIIWA<br>
+&nbsp;&nbsp;&nbsp;🚧 7DOF4SHELVES<br>
+&nbsp;&nbsp;&nbsp;🚧 7DOFBINS<br>
+&nbsp;&nbsp;&nbsp;🚧 14DOFIIWAS<br>
+&nbsp;&nbsp;&nbsp;🚧 15DOFALLEGRO<br>
