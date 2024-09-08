@@ -19,7 +19,7 @@ import numpy as np
 import os
 import yaml
 
-TEST_FILE = "3DOFFLIPPER.dmd.yaml"
+TEST_FILE = "5DOFUR3.dmd.yaml"
 
 yaml_file = os.path.dirname(os.path.abspath(__file__)) + "/yamls/" + TEST_FILE
 
@@ -51,3 +51,4 @@ simulator.set_publish_every_time_step(True)
 meshcat.StartRecording()
 simulator.AdvanceTo(10)
 meshcat.PublishRecording()
+print(f"{meshcat.web_url()}/download")

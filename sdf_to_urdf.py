@@ -3,8 +3,8 @@ import xml.dom.minidom
 import math
 import numpy as np
 
-input_ = "iris_environments/assets/models/wsg_50_description/sdf/schunk_wsg_50_welded_fingers.sdf"
-output = "iris_environments/assets/models/wsg_50_description/sdf/schunk_wsg_50_welded_fingers.urdf"
+input_ = "iris_environments/assets/shelves.sdf"
+output = "iris_environments/assets/shelves.urdf"
 
 
 rotation_x = np.array([

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<robot name="box_blue">
+  <link name="box_blue">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.03 0.03 0.12"/>
+      </geometry>
+      <material name="box_material">
+        <color rgba="0.0 0.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision name="box_collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.03 0.03 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
