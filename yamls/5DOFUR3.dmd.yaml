@@ -1,0 +1,27 @@
+directives:
+  - add_model:
+      name: ur3e
+      file: package://iris_environments/models/ur3e/ur3e_cylinder_weld_wrist.urdf
+  - add_model:
+      name: Schunk_Gripper
+      file: package://iris_environments/schunk_wsg_50_welded_fingers.urdf
+
+  - add_frame:
+      name: ur3e::ur3e_offset
+      X_PF:
+        base_frame: world
+        translation: [0, 0.6, 0]
+        rotation: !Rpy { deg: [0, 0, 0] }
+  - add_frame:
+      name: Schunk_Gripper::Schunk_Gripper_offset
+      X_PF:
+        base_frame: ur3e::ur_ee_link
+        translation: [0.06, 0, 0]
+        rotation: !Rpy { deg: [0, 0, -90] }
+
+  - add_weld:
+      parent: ur3e::ur3e_offset
+      child: ur3e::ur_base_link
+  - add_weld:
+      parent: Schunk_Gripper::Schunk_Gripper_offset
+      child: Schunk_Gripper::body

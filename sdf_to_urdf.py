@@ -3,8 +3,8 @@ import xml.dom.minidom
 import math
 import numpy as np
 
-input = "twoDOF_iiwa7_with_box_collision.sdf"
-output = "twoDOF_iiwa7_with_box_collision.urdf"
+input_ = "iris_environments/assets/models/wsg_50_description/sdf/schunk_wsg_50_welded_fingers.sdf"
+output = "iris_environments/assets/models/wsg_50_description/sdf/schunk_wsg_50_welded_fingers.urdf"
 
 
 rotation_x = np.array([
@@ -238,4 +238,4 @@ def convert_sdf_to_urdf(sdf_file, urdf_file):
         f.write(pretty_xml)
 
 # Usage
-convert_sdf_to_urdf(input, output)
+convert_sdf_to_urdf(input_, output)
