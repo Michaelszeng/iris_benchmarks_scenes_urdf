@@ -7,7 +7,7 @@ Asset files not included.
 ### Work in Progress...
 &nbsp;&nbsp;&nbsp;✅ 3DOFFLIPPER<br>
 &nbsp;&nbsp;&nbsp;✅ 5DOFUR3<br>
-&nbsp;&nbsp;&nbsp;🚧 6DOFUR3<br>
+&nbsp;&nbsp;&nbsp;✅ 6DOFUR3<br>
 &nbsp;&nbsp;&nbsp;🚧 7DOFIIWA<br>
 &nbsp;&nbsp;&nbsp;🚧 7DOF4SHELVES<br>
 &nbsp;&nbsp;&nbsp;🚧 7DOFBINS<br>
