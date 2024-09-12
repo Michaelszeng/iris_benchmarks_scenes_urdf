@@ -19,11 +19,15 @@ import numpy as np
 import os
 import yaml
 
-TEST_FILE = "7DOFBINS.dmd.yaml"
+TEST_FILE = "14DOFIIWAS.dmd.yaml"
 
 yaml_file = os.path.dirname(os.path.abspath(__file__)) + "/yamls/" + TEST_FILE
 
+print("Illustration:")
 meshcat = StartMeshcat()
+print("Proximity:")
+meshcat2 = StartMeshcat()
+
 builder = RobotDiagramBuilder()
 plant = builder.plant()
 scene_graph = builder.scene_graph()
@@ -37,10 +41,23 @@ ProcessModelDirectives(directives, plant, parser)
 
 plant.Finalize()
 inspector = scene_graph.model_inspector()
-meshcat_params = MeshcatVisualizerParams()
-meshcat_params.role = Role.kIllustration
-visualizer = MeshcatVisualizer.AddToBuilder(
-        builder.builder(), scene_graph, meshcat, meshcat_params)
+
+# Create the MeshcatVisualizerParams object for illustration
+meshcat_params_illustration = MeshcatVisualizerParams()
+meshcat_params_illustration.role = Role.kIllustration
+
+# Create the MeshcatVisualizerParams object for proximity
+meshcat_params_proximity = MeshcatVisualizerParams()
+meshcat_params_proximity.role = Role.kProximity
+
+# Add the MeshcatVisualizer to the builder for illustration role
+MeshcatVisualizer.AddToBuilder(
+    builder.builder(), scene_graph, meshcat, meshcat_params_illustration)
+
+# Add the MeshcatVisualizer to the builder for proximity role
+MeshcatVisualizer.AddToBuilder(
+    builder.builder(), scene_graph, meshcat2, meshcat_params_proximity)
+
 diagram = builder.Build()
 diagram_context = diagram.CreateDefaultContext()
 plant_context = plant.GetMyMutableContextFromRoot(diagram_context)

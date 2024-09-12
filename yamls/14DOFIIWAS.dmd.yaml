@@ -1,0 +1,90 @@
+directives:
+
+# Add iiwa_left
+- add_model:
+    name: iiwa_left
+    file: package://iris_environments/models/iiwa_convex/iiwa14_convex_collision.urdf
+
+- add_weld:
+    parent: world
+    child: iiwa_left::base
+
+# Add schunk_left
+- add_model:
+    name: wsg_left
+    file: package://iris_environments/schunk_wsg_50_welded_fingers.urdf
+
+- add_frame:
+    name: iiwa_left::wsg_attach
+    X_PF:
+      base_frame: iiwa_left::iiwa_link_7
+      translation: [0, 0, 0.114]
+      rotation: !Rpy { deg: [90.0, 0.0, 68.0 ]}
+
+- add_weld:
+    parent: iiwa_left::wsg_attach
+    child: wsg_left::body
+
+# Add iiwa_right
+- add_model:
+    name: iiwa_right
+    file: package://iris_environments/models/iiwa_convex/iiwa14_convex_collision.urdf
+
+
+- add_frame:
+    name: iiwa_right_origin
+    X_PF:
+      base_frame: world
+      translation: [0, 0.765, 0]
+
+- add_weld:
+    parent: iiwa_right_origin
+    child: iiwa_right::base
+
+# Add schunk_right
+- add_model:
+    name: wsg_right
+    file: package://iris_environments/schunk_wsg_50_welded_fingers.urdf
+
+- add_frame:
+    name: iiwa_right::wsg_attach
+    X_PF:
+      base_frame: iiwa_right::iiwa_link_7
+      translation: [0, 0, 0.114]
+      rotation: !Rpy { deg: [90.0, 0.0, 68.0 ]}
+
+- add_weld:
+    parent: iiwa_right::wsg_attach
+    child: wsg_right::body
+
+# Add table
+- add_model:
+    name: table
+    file: package://iris_environments/models/table/table_wide.urdf
+
+- add_frame:
+    name: table_origin
+    X_PF:
+      base_frame: world
+      translation: [0.4, 0.3825, 0.0]
+      rotation: !Rpy { deg: [0., 0., 0.]}
+
+- add_weld:
+    parent: table_origin
+    child: table::table_body
+
+# Mug Rack
+- add_model:
+    name: mug_rack
+    file: package://iris_environments/mug_rack.urdf
+
+- add_frame:
+    name: mug_rack_origin
+    X_PF:
+        base_frame: table_origin
+        translation: [0.4, 0, 0.0]
+        rotation: !Rpy { deg: [0, 0, 0]}
+
+- add_weld:
+    parent: mug_rack_origin
+    child: mug_rack::base
