@@ -1,0 +1,25 @@
+directives:
+
+# Add Allegro
+- add_model:
+    name: allegro_hand
+    file: package://iris_environments/models/allegro_hand_description/urdf/allegro_hand_description_left.urdf
+
+- add_weld:
+    parent: world
+    child: allegro_hand::hand_root
+
+# Add Block
+- add_model:
+    name: block
+    file: package://iris_environments/block.urdf
+
+- add_frame:
+    name: block_origin
+    X_PF:
+      base_frame: world
+      translation: [0.1, 0, 0.09]
+
+- add_weld:
+    parent: block_origin
+    child: block::block_body

@@ -19,7 +19,10 @@ import numpy as np
 import os
 import yaml
 
+# Set manually
 TEST_FILE = "14DOFIIWAS.dmd.yaml"
+
+
 
 yaml_file = os.path.dirname(os.path.abspath(__file__)) + "/yamls/" + TEST_FILE
 
@@ -68,4 +71,4 @@ simulator.set_publish_every_time_step(True)
 meshcat.StartRecording()
 simulator.AdvanceTo(10)
 meshcat.PublishRecording()
-print(f"View the static scene simulation at: {meshcat.web_url()}/download")
+print(f"View the scene simulation at: {meshcat.web_url()}/download")

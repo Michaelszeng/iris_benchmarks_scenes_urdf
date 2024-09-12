@@ -6,7 +6,7 @@ Asset files not included.
 
 Run `python scene_tester.py` to visualize a scene in Meshcat.
 
-### Work in Progress...
+### All 8 Scenes Work!
 &nbsp;&nbsp;&nbsp;✅ 3DOFFLIPPER<br>
 &nbsp;&nbsp;&nbsp;✅ 5DOFUR3<br>
 &nbsp;&nbsp;&nbsp;✅ 6DOFUR3<br>
@@ -14,4 +14,4 @@ Run `python scene_tester.py` to visualize a scene in Meshcat.
 &nbsp;&nbsp;&nbsp;✅ 7DOF4SHELVES<br>
 &nbsp;&nbsp;&nbsp;✅ 7DOFBINS<br>
 &nbsp;&nbsp;&nbsp;✅ 14DOFIIWAS<br>
-&nbsp;&nbsp;&nbsp;🚧 15DOFALLEGRO<br>
+&nbsp;&nbsp;&nbsp;✅ 15DOFALLEGRO<br>
