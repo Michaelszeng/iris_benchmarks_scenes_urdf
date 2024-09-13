@@ -18,13 +18,20 @@ from pydrake.all import (
 import numpy as np
 import os
 import yaml
+import time
 
 # Set manually
-TEST_FILE = "14DOFIIWAS.dmd.yaml"
+# TEST_SCENE = "3DOFFLIPPER"
+# TEST_SCENE = "5DOFUR3"
+# TEST_SCENE = "6DOFUR3"
+# TEST_SCENE = "7DOFIIWA"
+# TEST_SCENE = "7DOFBINS"
+# TEST_SCENE = "7DOF4SHELVES"
+# TEST_SCENE = "14DOFIIWAS"
+TEST_SCENE = "15DOFALLEGRO"
 
 
-
-yaml_file = os.path.dirname(os.path.abspath(__file__)) + "/yamls/" + TEST_FILE
+yaml_file = os.path.dirname(os.path.abspath(__file__)) + "/yamls/" + TEST_SCENE + ".dmd.yaml"
 
 print("Illustration:")
 meshcat = StartMeshcat()
@@ -69,6 +76,7 @@ diagram.ForcedPublish(diagram_context)
 simulator = Simulator(diagram)
 simulator.set_publish_every_time_step(True)
 meshcat.StartRecording()
-simulator.AdvanceTo(10)
+simulator.AdvanceTo(5)
 meshcat.PublishRecording()
+time.sleep(5)
 print(f"View the scene simulation at: {meshcat.web_url()}/download")

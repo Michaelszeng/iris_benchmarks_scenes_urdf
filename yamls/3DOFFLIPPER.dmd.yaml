@@ -13,13 +13,15 @@ directives:
 - add_model:
     name: oneDOF_iiwa7_with_box_collision
     file: package://iris_environments/oneDOF_iiwa7_with_box_collision.urdf
+    default_joint_positions:
+        iiwa_joint_2: [ -0.78 ]
 
 - add_frame:
     name: oneDOF_iiwa7_with_box_collision::oneDOF_iiwa7_with_box_collision_offset
     X_PF:
-    base_frame: world
-    translation: [0, -0.55, 0]
-    rotation: !Rpy { deg: [0, 0, -90] }
+        base_frame: world
+        translation: [0, -0.55, 0]
+        rotation: !Rpy { deg: [0, 0, -90] }
 
 - add_weld:
     parent: oneDOF_iiwa7_with_box_collision::oneDOF_iiwa7_with_box_collision_offset
@@ -29,13 +31,17 @@ directives:
 - add_model:
     name: twoDOF_iiwa7_with_box_collision
     file: package://iris_environments/twoDOF_iiwa7_with_box_collision.urdf
+    default_joint_positions:
+        iiwa_joint_2: [ -0.1 ]
+        iiwa_joint_4: [ -0.78 ]
+
 
 - add_frame:
     name: twoDOF_iiwa7_with_box_collision::twoDOF_iiwa7_with_box_collision_offset
     X_PF:
-    base_frame: world
-    translation: [0, 0.55, 0]
-    rotation: !Rpy { deg: [0, 0, -90] }
+        base_frame: world
+        translation: [0, 0.55, 0]
+        rotation: !Rpy { deg: [0, 0, -90] }
 
 - add_weld:
     parent: twoDOF_iiwa7_with_box_collision::twoDOF_iiwa7_with_box_collision_offset

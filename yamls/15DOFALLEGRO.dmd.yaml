@@ -4,6 +4,22 @@ directives:
 - add_model:
     name: allegro_hand
     file: package://iris_environments/models/allegro_hand_description/urdf/allegro_hand_description_left.urdf
+    default_joint_positions:
+        joint_1: [ 0.3 ]
+        joint_2: [ 0.3 ]
+        joint_3: [ 0.3 ]
+        joint_4: [ 0.3 ]
+        joint_5: [ 0.3 ]
+        joint_6: [ 0.3 ]
+        joint_7: [ 0.3 ]
+        joint_8: [ 0.3 ]
+        joint_9: [ 0.3 ]
+        joint_10: [ 0.3 ]
+        joint_11: [ 0.3 ]
+        joint_12: [ 0.3 ]
+        joint_13: [ 0.3 ]
+        joint_14: [ 0.3 ]
+        joint_15: [ 0.3 ]
 
 - add_weld:
     parent: world
@@ -17,8 +33,8 @@ directives:
 - add_frame:
     name: block_origin
     X_PF:
-      base_frame: world
-      translation: [0.1, 0, 0.09]
+        base_frame: world
+        translation: [0.1, 0, 0.09]
 
 - add_weld:
     parent: block_origin

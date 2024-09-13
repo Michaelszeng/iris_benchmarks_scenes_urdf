@@ -6,9 +6,16 @@ directives:
 - add_model:
     name: iiwa
     file: package://iris_environments/iiwa7_with_box_collision.urdf
+    default_joint_positions:
+        iiwa_joint_1: [ 0.0 ]
+        iiwa_joint_2: [ 0.78 ]
+        iiwa_joint_3: [ 0.0 ]
+        iiwa_joint_4: [ -1.4 ]
+        iiwa_joint_5: [ 0.0 ]
+        iiwa_joint_6: [ 0.62 ]
+        iiwa_joint_7: [ 1.57 ]
 - add_weld:
     parent: world
-    #child: iiwa::base
     child: iiwa::iiwa_link_0
     
 # Add schunk
@@ -19,9 +26,9 @@ directives:
 - add_frame:
     name: iiwa::wsg_attach
     X_PF:
-      base_frame: iiwa::iiwa_link_7
-      translation: [0, 0, 0.114]
-      rotation: !Rpy { deg: [90.0, 0.0, 0.0 ]}
+        base_frame: iiwa::iiwa_link_7
+        translation: [0, 0, 0.114]
+        rotation: !Rpy { deg: [90.0, 0.0, 0.0 ]}
 
 - add_weld:
     parent: iiwa::wsg_attach
@@ -35,8 +42,8 @@ directives:
 - add_frame:
     name: shelf_origin
     X_PF:
-      base_frame: world
-      translation: [0.85, 0, 0.4]
+        base_frame: world
+        translation: [0.85, 0, 0.4]
 
 - add_weld:
     parent: shelf_origin
@@ -50,9 +57,9 @@ directives:
 - add_frame:
     name: bin_originR
     X_PF:
-      base_frame: world
-      translation: [0, -0.6, 0]
-      rotation: !Rpy { deg: [0.0, 0.0, 90.0 ]}
+        base_frame: world
+        translation: [0, -0.6, 0]
+        rotation: !Rpy { deg: [0.0, 0.0, 90.0 ]}
 
 - add_weld:
     parent: bin_originR
@@ -65,9 +72,9 @@ directives:
 - add_frame:
     name: bin_originL
     X_PF:
-      base_frame: world
-      translation: [0, 0.6, 0]
-      rotation: !Rpy { deg: [0.0, 0.0, 90.0 ]}
+        base_frame: world
+        translation: [0, 0.6, 0]
+        rotation: !Rpy { deg: [0.0, 0.0, 90.0 ]}
 
 - add_weld:
     parent: bin_originL
@@ -81,9 +88,9 @@ directives:
 - add_frame:
     name: table_origin
     X_PF:
-      base_frame: world
-      translation: [0.4, 0.0, 0.0]
-      rotation: !Rpy { deg: [0., 0., 00]}
+        base_frame: world
+        translation: [0.4, 0.0, 0.0]
+        rotation: !Rpy { deg: [0., 0., 00]}
 
 - add_weld:
     parent: table_origin

@@ -4,6 +4,14 @@ directives:
 - add_model:
     name: iiwa_left
     file: package://iris_environments/models/iiwa_convex/iiwa14_convex_collision.urdf
+    default_joint_positions:
+        iiwa_joint_1: [ 0.78 ]
+        iiwa_joint_2: [ 0.98 ]
+        iiwa_joint_3: [ 0.0 ]
+        iiwa_joint_4: [ -1.1 ]
+        iiwa_joint_5: [ 0.0 ]
+        iiwa_joint_6: [ -0.62 ]
+        iiwa_joint_7: [ 0.2 ]
 
 - add_weld:
     parent: world
@@ -17,9 +25,9 @@ directives:
 - add_frame:
     name: iiwa_left::wsg_attach
     X_PF:
-      base_frame: iiwa_left::iiwa_link_7
-      translation: [0, 0, 0.114]
-      rotation: !Rpy { deg: [90.0, 0.0, 68.0 ]}
+        base_frame: iiwa_left::iiwa_link_7
+        translation: [0, 0, 0.114]
+        rotation: !Rpy { deg: [90.0, 0.0, 68.0 ]}
 
 - add_weld:
     parent: iiwa_left::wsg_attach
@@ -29,13 +37,21 @@ directives:
 - add_model:
     name: iiwa_right
     file: package://iris_environments/models/iiwa_convex/iiwa14_convex_collision.urdf
+    default_joint_positions:
+        iiwa_joint_1: [ -0.58 ]
+        iiwa_joint_2: [ 0.83 ]
+        iiwa_joint_3: [ 0.0 ]
+        iiwa_joint_4: [ -0.6 ]
+        iiwa_joint_5: [ 0.0 ]
+        iiwa_joint_6: [ 0.2 ]
+        iiwa_joint_7: [ 0.4 ]
 
 
 - add_frame:
     name: iiwa_right_origin
     X_PF:
-      base_frame: world
-      translation: [0, 0.765, 0]
+        base_frame: world
+        translation: [0, 0.765, 0]
 
 - add_weld:
     parent: iiwa_right_origin
@@ -49,9 +65,9 @@ directives:
 - add_frame:
     name: iiwa_right::wsg_attach
     X_PF:
-      base_frame: iiwa_right::iiwa_link_7
-      translation: [0, 0, 0.114]
-      rotation: !Rpy { deg: [90.0, 0.0, 68.0 ]}
+        base_frame: iiwa_right::iiwa_link_7
+        translation: [0, 0, 0.114]
+        rotation: !Rpy { deg: [90.0, 0.0, 68.0 ]}
 
 - add_weld:
     parent: iiwa_right::wsg_attach
@@ -65,9 +81,9 @@ directives:
 - add_frame:
     name: table_origin
     X_PF:
-      base_frame: world
-      translation: [0.4, 0.3825, 0.0]
-      rotation: !Rpy { deg: [0., 0., 0.]}
+        base_frame: world
+        translation: [0.4, 0.3825, 0.0]
+        rotation: !Rpy { deg: [0., 0., 0.]}
 
 - add_weld:
     parent: table_origin

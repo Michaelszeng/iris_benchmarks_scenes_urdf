@@ -4,13 +4,19 @@ directives:
 - add_model:
     name: ur3e
     file: package://iris_environments/models/ur3e/ur3e_cylinder_weld_wrist.urdf
+    default_joint_positions:
+        ur_shoulder_pan_joint: [ -1.57 ]
+        ur_shoulder_lift_joint: [ -1.42 ]
+        ur_elbow_joint: [ -1.23 ]
+        ur_wrist_1_joint: [ 2.94 ]
+        ur_wrist_2_joint: [ 0.0 ]
 
 - add_frame:
     name: ur3e::ur3e_offset
     X_PF:
-    base_frame: world
-    translation: [0, 0, 0]
-    rotation: !Rpy { deg: [0, 0, 0] }
+        base_frame: world
+        translation: [0, 0, 0]
+        rotation: !Rpy { deg: [0, 0, 0] }
 
 - add_weld:
     parent: ur3e::ur3e_offset
@@ -24,9 +30,9 @@ directives:
 - add_frame:
     name: Schunk_Gripper::Schunk_Gripper_offset
     X_PF:
-    base_frame: ur3e::ur_ee_link
-    translation: [0.06, 0, 0]
-    rotation: !Rpy { deg: [0, 0, -90] }
+        base_frame: ur3e::ur_ee_link
+        translation: [0.06, 0, 0]
+        rotation: !Rpy { deg: [0, 0, -90] }
 
 - add_weld:
     parent: Schunk_Gripper::Schunk_Gripper_offset
@@ -40,9 +46,9 @@ directives:
 - add_frame:
     name: shelves::shelves_offset
     X_PF:
-    base_frame: world
-    translation: [0.4, 0, 0.4]
-    rotation: !Rpy { deg: [0, 0, 0] }
+        base_frame: world
+        translation: [0.4, 0, 0.4]
+        rotation: !Rpy { deg: [0, 0, 0] }
 
 - add_weld:
     parent: shelves::shelves_offset
@@ -56,9 +62,9 @@ directives:
 - add_frame:
     name: box_red::box_red_offset
     X_PF:
-    base_frame: shelves::shelves_body
-    translation: [-0.1, 0, -0.07]
-    rotation: !Rpy { deg: [0, 0, 0] }
+        base_frame: shelves::shelves_body
+        translation: [-0.1, 0, -0.07]
+        rotation: !Rpy { deg: [0, 0, 0] }
 
 - add_weld:
     parent: box_red::box_red_offset
@@ -72,9 +78,9 @@ directives:
 - add_frame:
     name: box_blue::box_blue_offset
     X_PF:
-    base_frame: shelves::shelves_body
-    translation: [0, 0, 0.2]
-    rotation: !Rpy { deg: [0, 0, 0] }
+        base_frame: shelves::shelves_body
+        translation: [0, 0, 0.2]
+        rotation: !Rpy { deg: [0, 0, 0] }
 
 - add_weld:
     parent: box_blue::box_blue_offset
@@ -88,9 +94,9 @@ directives:
 - add_frame:
     name: ground::ground_offset
     X_PF:
-    base_frame: world
-    translation: [0, 0, -0.05]
-    rotation: !Rpy { deg: [0, 0, 0] }
+        base_frame: world
+        translation: [0, 0, -0.05]
+        rotation: !Rpy { deg: [0, 0, 0] }
 
 - add_weld:
     parent: ground::ground_offset
