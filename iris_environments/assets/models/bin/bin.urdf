@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<robot name="bin_model">
+  <link name="bin_base">
+    <inertial>
+      <mass value="18.70"/>
+      <inertia ixx="0.79" ixy="0" ixz="0" iyy="0.53" iyz="0" izz="1.2"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.570796"/>
+      <geometry>
+        <mesh filename="bin.obj"/>
+      </geometry>
+    </visual>
+    <collision name="front">
+      <origin xyz="0.22 0.0 0.105" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.05 0.63 0.21"/>
+      </geometry>
+    </collision>
+    <collision name="back">
+      <origin xyz="-0.22 0.0 0.105" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.05 0.63 0.21"/>
+      </geometry>
+    </collision>
+    <collision name="left">
+      <origin xyz="0.0 0.29 0.105" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.49 0.05 0.21"/>
+      </geometry>
+    </collision>
+    <collision name="right">
+      <origin xyz="0.0 -0.29 0.105" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.49 0.05 0.21"/>
+      </geometry>
+    </collision>
+    <collision name="bottom">
+      <origin xyz="0.0 0.0 0.0075" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.49 0.63 0.015"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

@@ -2,8 +2,6 @@
 
 ![Alt text](image.png)
 
-Asset files not included.
-
 Run `python scene_tester.py` to visualize a scene in Meshcat.
 
 ### All 8 Scenes Work!
