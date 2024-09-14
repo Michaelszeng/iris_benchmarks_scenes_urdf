@@ -217,4 +217,33 @@
     <axis xyz="2.653589793325485e-06 7.0415258596773114e-12 0.9999999999964793"/>
     <limit lower="-3.05433" upper="3.05433" effort="300" velocity="10"/>
   </joint>
+
+  <transmission name="tran_a2">
+    <robotNamespace>/twoDOF_iiwa7_with_box_collision</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="iiwa_joint_2">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a2">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        <!-- guessed gear_ratio and rotor_inertia -->
+        <drake:gear_ratio value="160.0" />
+        <drake:rotor_inertia value="0.0001321" />
+    </actuator>
+  </transmission>
+  <transmission name="tran_a4">
+    <robotNamespace>/twoDOF_iiwa7_with_box_collision</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="iiwa_joint_4">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a4">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        <!-- guessed gear_ratio and rotor_inertia -->
+        <drake:gear_ratio value="160.0" />
+        <drake:rotor_inertia value="0.0001321" />
+    </actuator>
+  </transmission>
 </robot>
