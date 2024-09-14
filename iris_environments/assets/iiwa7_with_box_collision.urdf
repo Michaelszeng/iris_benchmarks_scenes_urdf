@@ -217,4 +217,103 @@
     <axis xyz="2.6535897933254864e-06 7.041525858790415e-12 0.9999999999964793"/>
     <limit lower="-3.05433" upper="3.05433" effort="300" velocity="10"/>
   </joint>
+
+  <transmission name="tran_a1">
+    <robotNamespace>/iiwa7_with_box_collision</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="iiwa_joint_1">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a1">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        <!-- guessed gear_ratio and rotor_inertia -->
+        <drake:gear_ratio value="160.0" />
+        <drake:rotor_inertia value="0.0001321" />
+    </actuator>
+  </transmission>
+  <transmission name="tran_a2">
+    <robotNamespace>/iiwa7_with_box_collision</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="iiwa_joint_2">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a2">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        <!-- guessed gear_ratio and rotor_inertia -->
+        <drake:gear_ratio value="160.0" />
+        <drake:rotor_inertia value="0.0001321" />
+    </actuator>
+  </transmission>
+  <transmission name="tran_a3">
+    <robotNamespace>/iiwa7_with_box_collision</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="iiwa_joint_3">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a3">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        <!-- guessed gear_ratio and rotor_inertia -->
+        <drake:gear_ratio value="160.0" />
+        <drake:rotor_inertia value="0.0001321" />
+    </actuator>
+  </transmission>
+  <transmission name="tran_a4">
+    <robotNamespace>/iiwa7_with_box_collision</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="iiwa_joint_4">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a4">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        <!-- guessed gear_ratio and rotor_inertia -->
+        <drake:gear_ratio value="160.0" />
+        <drake:rotor_inertia value="0.0001321" />
+    </actuator>
+  </transmission>
+  <transmission name="tran_a5">
+    <robotNamespace>/iiwa7_with_box_collision</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="iiwa_joint_5">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a5">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        <!-- guessed gear_ratio and rotor_inertia -->
+        <drake:gear_ratio value="160.0" />
+        <drake:rotor_inertia value="0.0001321" />
+    </actuator>
+  </transmission>
+  <transmission name="tran_a6">
+    <robotNamespace>/iiwa7_with_box_collision</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="iiwa_joint_6">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a6">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        <!-- guessed gear_ratio and rotor_inertia -->
+        <drake:gear_ratio value="160.0" />
+        <drake:rotor_inertia value="0.0001321" />
+    </actuator>
+  </transmission>
+  <transmission name="tran_a7">
+    <robotNamespace>/iiwa7_with_box_collision</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="iiwa_joint_7">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_a7">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        <!-- guessed gear_ratio and rotor_inertia -->
+        <drake:gear_ratio value="160.0" />
+        <drake:rotor_inertia value="0.0001321" />
+    </actuator>
+  </transmission>
 </robot>
