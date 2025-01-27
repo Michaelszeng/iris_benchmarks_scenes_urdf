@@ -4,12 +4,33 @@
 
 Run `python scene_tester.py` to visualize a scene in Meshcat.
 
-### All 8 Scenes Work!
-&nbsp;&nbsp;&nbsp;✅ 3DOFFLIPPER<br>
-&nbsp;&nbsp;&nbsp;✅ 5DOFUR3<br>
-&nbsp;&nbsp;&nbsp;✅ 6DOFUR3<br>
-&nbsp;&nbsp;&nbsp;✅ 7DOFIIWA<br>
-&nbsp;&nbsp;&nbsp;✅ 7DOF4SHELVES<br>
-&nbsp;&nbsp;&nbsp;✅ 7DOFBINS<br>
-&nbsp;&nbsp;&nbsp;✅ 14DOFIIWAS<br>
-&nbsp;&nbsp;&nbsp;✅ 15DOFALLEGRO<br>
+### Recommended Usage
+
+1. `git submodule add https://github.com/Michaelszeng/iris_benchmarks_scenes_urdf`
+
+2. Add the following code to the top of your test file to locate the yaml file for the desired scene and create a `MultibodyPlant` from it:
+
+```python
+TEST_SCENE = "3DOFFLIPPER"
+# TEST_SCENE = "5DOFUR3"
+# TEST_SCENE = "6DOFUR3"
+# TEST_SCENE = "7DOFIIWA"
+# TEST_SCENE = "7DOFBINS"
+# TEST_SCENE = "7DOF4SHELVES"
+# TEST_SCENE = "14DOFIIWAS"
+# TEST_SCENE = "15DOFALLEGRO"
+
+src_directory = os.path.dirname(os.path.abspath(__file__))
+parent_directory = os.path.dirname(src_directory)
+data_directory = os.path.join(parent_directory)
+scene_yaml_file = os.path.join(data_directory, "data", "iris_benchmarks_scenes_urdf", "yamls", TEST_SCENE + ".dmd.yaml")
+
+robot_diagram_builder = RobotDiagramBuilder()
+parser = robot_diagram_builder.parser()
+iris_environement_assets = os.path.join(data_directory, "data", "iris_benchmarks_scenes_urdf", "iris_environments", "assets")
+parser.package_map().Add("iris_environments", iris_environement_assets)
+
+...
+```
+
+Alternatively, see the `template_plant_builder.py` and/or `template_station_builder.py` to see full examples of building a Drake `MultibodyPlant` or a `HardwareStation` from the yaml files.
