@@ -1,0 +1,46 @@
+directives:
+
+# Add Box
+- add_model:
+    name: box
+    file: package://iris_environments/box_small.urdf
+
+- add_weld:
+    parent: world
+    child: box::base
+
+# Add 1 DOF IIWA
+- add_model:
+    name: oneDOF_iiwa7_with_box_collision
+    file: package://iris_environments/oneDOF_iiwa7_with_box_collision.urdf
+    default_joint_positions:
+        iiwa_joint_2: [ -0.78 ]
+
+- add_frame:
+    name: oneDOF_iiwa7_with_box_collision::oneDOF_iiwa7_with_box_collision_offset
+    X_PF:
+        base_frame: world
+        translation: [0, -0.55, 0]
+        rotation: !Rpy { deg: [0, 0, -90] }
+
+- add_weld:
+    parent: oneDOF_iiwa7_with_box_collision::oneDOF_iiwa7_with_box_collision_offset
+    child: oneDOF_iiwa7_with_box_collision::iiwa_oneDOF_link_0
+
+# Add 1 DOF IIWA
+- add_model:
+    name: oneDOF_iiwa7_with_box_collision_2
+    file: package://iris_environments/oneDOF_iiwa7_with_box_collision.urdf
+    default_joint_positions:
+        iiwa_joint_2: [ 0.0 ]
+
+- add_frame:
+    name: oneDOF_iiwa7_with_box_collision_2::oneDOF_iiwa7_with_box_collision_offset
+    X_PF:
+        base_frame: world
+        translation: [0, 0.55, 0]
+        rotation: !Rpy { deg: [0, 0, -90] }
+
+- add_weld:
+    parent: oneDOF_iiwa7_with_box_collision_2::oneDOF_iiwa7_with_box_collision_offset
+    child: oneDOF_iiwa7_with_box_collision_2::iiwa_oneDOF_link_0

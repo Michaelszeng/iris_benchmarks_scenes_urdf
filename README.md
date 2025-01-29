@@ -2,6 +2,8 @@
 
 ![Alt text](image.png)
 
+Plus one more scene -- `2DOFFLIPPER` which makes it easier to visualize algorithms (since the configuration space is 2D).
+
 Run `python scene_tester.py` to visualize a scene in Meshcat.
 
 ### Recommended Usage
@@ -11,10 +13,11 @@ Run `python scene_tester.py` to visualize a scene in Meshcat.
 2. Add the following code to the top of your test file to locate the yaml file for the desired scene and create a `MultibodyPlant` from it:
 
 ```python
-TEST_SCENE = "3DOFFLIPPER"
+# TEST_SCENE = "2DOFFLIPPER"
+# TEST_SCENE = "3DOFFLIPPER"
 # TEST_SCENE = "5DOFUR3"
 # TEST_SCENE = "6DOFUR3"
-# TEST_SCENE = "7DOFIIWA"
+TEST_SCENE = "7DOFIIWA"
 # TEST_SCENE = "7DOFBINS"
 # TEST_SCENE = "7DOF4SHELVES"
 # TEST_SCENE = "14DOFIIWAS"
