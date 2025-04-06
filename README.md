@@ -6,6 +6,8 @@ Plus one more scene -- `2DOFFLIPPER` which makes it easier to visualize algorith
 
 Run `python scene_tester.py` to visualize a scene in Meshcat.
 
+Run `python template_teleop_simple.py` to teleoperate a robot in a scene.
+
 ### Recommended Usage
 
 1. `git submodule add https://github.com/Michaelszeng/iris_benchmarks_scenes_urdf`
@@ -23,14 +25,13 @@ TEST_SCENE = "7DOFIIWA"
 # TEST_SCENE = "14DOFIIWAS"
 # TEST_SCENE = "15DOFALLEGRO"
 
-src_directory = os.path.dirname(os.path.abspath(__file__))
-parent_directory = os.path.dirname(src_directory)
+parent_directory = os.path.dirname(os.path.abspath(__file__))
 data_directory = os.path.join(parent_directory)
-scene_yaml_file = os.path.join(data_directory, "data", "iris_benchmarks_scenes_urdf", "yamls", TEST_SCENE + ".dmd.yaml")
+scene_yaml_file = os.path.join(data_directory, "iris_benchmarks_scenes_urdf", "yamls", TEST_SCENE + ".dmd.yaml")
 
 robot_diagram_builder = RobotDiagramBuilder()
 parser = robot_diagram_builder.parser()
-iris_environement_assets = os.path.join(data_directory, "data", "iris_benchmarks_scenes_urdf", "iris_environments", "assets")
+iris_environement_assets = os.path.join(data_directory, "iris_benchmarks_scenes_urdf", "iris_environments", "assets")
 parser.package_map().Add("iris_environments", iris_environement_assets)
 
 ...

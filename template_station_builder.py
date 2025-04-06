@@ -1,5 +1,10 @@
 """
-Template file that allows teleoperation of robots in all 9 scenes.
+Template file that shows how to create a HardwareStation for robots in all 9 scenes.
+
+This is ideal for control and simulation (i.e. with an InverseDynamicsController)
+because the HardwareStation exposes actuation input ports.
+
+Note: obtain station.py from https://github.com/Michaelszeng/GCS-Box-Unloading/blob/master/src/station.py
 """
 
 from pydrake.all import (
@@ -19,14 +24,9 @@ from pydrake.all import (
 
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from station import MakeHardwareStation, load_scenario
-from scenario import scenario_yaml_welded_trailer
-from utils import diagram_visualize_connections
 
 import numpy as np
-import time
-import importlib
 import argparse
 
 # TEST_SCENE = "2DOFFLIPPER"
@@ -39,10 +39,9 @@ TEST_SCENE = "7DOFIIWA"
 # TEST_SCENE = "14DOFIIWAS"
 # TEST_SCENE = "15DOFALLEGRO"
 
-src_directory = os.path.dirname(os.path.abspath(__file__))
-parent_directory = os.path.dirname(src_directory)
+parent_directory = os.path.dirname(os.path.abspath(__file__))
 data_directory = os.path.join(parent_directory)
-scene_yaml_file = os.path.join(data_directory, "data", "iris_benchmarks_scenes_urdf", "yamls", TEST_SCENE + ".dmd.yaml")
+scene_yaml_file = os.path.join(data_directory, "yamls", TEST_SCENE + ".dmd.yaml")
 
 
 class VectorSplitter(LeafSystem):
@@ -88,7 +87,7 @@ station = builder.AddSystem(MakeHardwareStation(
 
     # This is to be able to load our own models from a local path
     # we can refer to this using the "package://" URI directive
-    parser_preload_callback=lambda parser: parser.package_map().Add("iris_environments", os.path.join(data_directory, "data", "iris_benchmarks_scenes_urdf", "iris_environments", "assets")),
+    parser_preload_callback=lambda parser: parser.package_map().Add("iris_environments", os.path.join(data_directory, "iris_environments", "assets")),
 ))
 scene_graph = station.GetSubsystemByName("scene_graph")
 plant = station.GetSubsystemByName("plant")
