@@ -35,10 +35,9 @@ TEST_SCENE = "3DOFFLIPPER"
 # TEST_SCENE = "14DOFIIWAS"
 # TEST_SCENE = "15DOFALLEGRO"
 
-src_directory = os.path.dirname(os.path.abspath(__file__))
-parent_directory = os.path.dirname(src_directory)
+parent_directory = os.path.dirname(os.path.abspath(__file__))
 data_directory = os.path.join(parent_directory)
-scene_yaml_file = os.path.join(data_directory, "data", "iris_benchmarks_scenes_urdf", "yamls", TEST_SCENE + ".dmd.yaml")
+scene_yaml_file = os.path.join(data_directory, "yamls", TEST_SCENE + ".dmd.yaml")
 
 
 class MeshcatSliderSource(LeafSystem):
@@ -155,7 +154,7 @@ meshcat = StartMeshcat()
 
 robot_diagram_builder = RobotDiagramBuilder()
 parser = robot_diagram_builder.parser()
-iris_environement_assets = os.path.join(data_directory, "data", "iris_benchmarks_scenes_urdf", "iris_environments", "assets")
+iris_environement_assets = os.path.join(data_directory, "iris_environments", "assets")
 parser.package_map().Add("iris_environments", iris_environement_assets)
 robot_model_instances = parser.AddModels(scene_yaml_file)
 plant = robot_diagram_builder.plant()
